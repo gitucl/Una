@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Belong to Una</title>
+		<link rel="stylesheet" href="./img/hovertree.css" />
+	</head>
+	<body>
+		<div class="hovertreeinfo">
+			<h2>Una 20200520</h2>
+		</div>
+		<!--/*外层最大容器*/-->
+		<div class="wrap">
+			<!--	/*包裹所有元素的容器*/-->
+			<div class="cube">
+				<!--前面图片 -->
+				<div class="out_front">
+					<img src="img/1.jpg " class="pic" />
+				</div>
+				<!--后面图片 -->
+				<div class="out_back">
+					<img src="img/2.jpg" class="pic"/>
+				</div>
+				<!--左图片 -->
+				<div class="out_left">
+					<img src="img/3.jpg" class="pic" />
+				</div>
+				<div class="out_right">
+					<img src="img/4.jpg" class="pic" />
+				</div>
+				<div class="out_top">
+					<img src="img/5.jpg" class="pic" />
+				</div>
+				<div class="out_bottom">
+					<img src="img/6.jpg" class="pic" />
+				</div>
+				<!--小正方体 -->
+				<span class="in_front">
+					<img src="img/7.jpg" class="in_pic" />
+				</span>
+				<span class="in_back">
+					<img src="img/8.jpg" class="in_pic" />
+				</span>
+				<span class="in_left">
+					<img src="img/9.jpg" class="in_pic" />
+				</span>
+				<span class="in_right">
+					<img src="img/10.jpg" class="in_pic" />
+				</span>
+				<span class="in_top">
+					<img src="img/11.jpg" class="in_pic" />
+				</span>
+				<span class="in_bottom">
+					<img src="img/12.jpg" class="in_pic" />
+				</span>
+			</div>
+		</div>
+		<!-- 网易云外链音乐 -->
+		<!-- 只有发布和编译到端口才会自动播放 -->
+		<div style="position:absolute;right:0px;bottom:0px;">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="100%" width=330 height=86 
+				src="//music.163.com/outchain/player?type=2&id=1370748318&auto=1&height=66"></iframe>
+		</div>
+		<!-- 本地音乐，双击index.html -->
+		<div style="position:absolute;left:0px;bottom:0px;">
+			<!-- 隐藏播放条：删除ontrols="controls"部分 -->
+			<audio autoplay="autopaly" loop="loop" controls="controls" id="audios">
+				<source src="img/qianyuqianxun.mp3" type="audio/mp3" />
+			</audio>
+		</div>
+		<script>
+			var music = document.getElementById('video');
+			var state = 0;
+			document.addEventListener('touchstart', function(){    
+				  if(state==0){        
+					  music.play();        
+					  state=1;    
+				  }  
+			  }, false);
+			document.addEventListener("WeixinJSBridgeReady", function () {    
+				  music.play();
+			  }, false);  
+			//循环播放
+			music.onended = function () {    
+				music.load();    
+				music.play();
+			}    
+		</script>
+	</body>
+</html>
